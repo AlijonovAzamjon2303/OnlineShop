@@ -2,11 +2,9 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
-using System;
-internal class Program
+namespace OnlineShop.Brokers.Loggings
 {
-    private static void Main(string[] args)
+    internal interface ILoggingBroker
     {
-        
     }
 }

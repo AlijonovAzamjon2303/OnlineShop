@@ -2,11 +2,9 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
-using System;
-internal class Program
+namespace OnlineShop.Services.Auth
 {
-    private static void Main(string[] args)
+    internal interface IAuth
     {
-        
     }
 }
