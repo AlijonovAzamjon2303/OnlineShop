@@ -2,18 +2,21 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
-using OnlineShop.Models.Users;
-
-namespace OnlineShop.Services.Auth
+namespace OnlineShop.Brokers.Loggings
 {
-    internal class Auth : IAuth
+    internal class LoggingBroker : ILoggingBroker
     {
-        public void LogIn(IUser user)
+        public void Log(string message)
         {
             throw new System.NotImplementedException();
         }
 
-        public IUser SignUp(IUser user)
+        public void LogError(string message)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void LogError(Exception exception)
         {
             throw new System.NotImplementedException();
         }

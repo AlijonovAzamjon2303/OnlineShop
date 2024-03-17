@@ -2,12 +2,12 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
-namespace OnlineShop.Models.Products
+namespace OnlineShop.Models.Users
 {
-    internal interface IProduct
+    internal interface IUser
     {
         public int Id { get; set; }
-        public double Price { get; set; }
-        public double Weight { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

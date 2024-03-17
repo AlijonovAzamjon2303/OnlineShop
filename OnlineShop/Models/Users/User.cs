@@ -2,9 +2,9 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
-namespace OnlineShop.Models
+namespace OnlineShop.Models.Users
 {
-    internal class User
+    internal class User : IUser
     {
         public int Id { get; set; }
         public string Username { get; set; }

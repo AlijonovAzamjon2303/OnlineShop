@@ -6,5 +6,6 @@ namespace OnlineShop.Brokers.Storages
 {
     internal interface IStorage
     {
+
     }
 }
