@@ -4,7 +4,7 @@
 
 namespace OnlineShop.Models.Users
 {
-    internal class User : IUser
+    internal class User
     {
         public int Id { get; set; }
         public string Username { get; set; }

@@ -32,7 +32,7 @@ internal class Program
                 {
                     Console.Clear();
                     IAuth auth = new Auth();
-                    IUser user = new User();
+                    User user = new User();
                     Console.Write("Id = "); user.Id = int.Parse(Console.ReadLine());
                     Console.Write("Username = "); user.Username = Console.ReadLine();
                     Console.Write("Password = "); user.Password = Console.ReadLine();
@@ -48,7 +48,7 @@ internal class Program
                 {
                     Console.Clear();
                     IAuth auth = new Auth();
-                    IUser user = new User();
+                    User user = new User();
                     Console.Write("Id = "); user.Id = int.Parse(Console.ReadLine());
                     Console.Write("Username = "); user.Username = Console.ReadLine();
                     Console.Write("Password = "); user.Password = Console.ReadLine();

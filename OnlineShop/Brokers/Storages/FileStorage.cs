@@ -15,18 +15,18 @@ namespace OnlineShop.Brokers.Storages
         {
             this.CheckFileExsist();  
         }
-        public void AddUser(IUser user)
+        public void AddUser(User user)
         {
             File.AppendAllText(path, user.ToString() + "\n");
         }
 
-        public List<IUser> GetUsers()
+        public List<User> GetUsers()
         {
-            List<IUser> oldUsers = new List<IUser>();
+            List<User> oldUsers = new List<User>();
             string[] allLines = File.ReadAllLines(path);
             foreach (string line in allLines)
             {
-                IUser user = new User();
+                User user = new User();
                 string[] data = line.Split('*');
                 user.Id = int.Parse(data[0]);
                 user.Username = data[1];

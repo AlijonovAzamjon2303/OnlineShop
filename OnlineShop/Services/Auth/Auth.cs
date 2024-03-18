@@ -16,9 +16,9 @@ namespace OnlineShop.Services.Auth
         {
             fileStorage = new FileStorage();
         }
-        public bool LogIn(IUser user)
+        public bool LogIn(User user)
         {
-            List<IUser> users = fileStorage.GetUsers();
+            List<User> users = fileStorage.GetUsers();
             foreach(var u in  users)
             {
                 if (u.Id == user.Id && u.Username == user.Username && u.Password == user.Password)
@@ -30,7 +30,7 @@ namespace OnlineShop.Services.Auth
             return false;
         }
 
-        public IUser SignUp(IUser user)
+        public User SignUp(User user)
         {
             if(this.LogIn(user))
             {

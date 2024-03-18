@@ -9,7 +9,7 @@ namespace OnlineShop.Brokers.Storages
 {
     internal interface IStorage
     {
-        List<IUser> GetUsers();
-        void AddUser(IUser user);
+        List<User> GetUsers();
+        void AddUser(User user);
     }
 }

@@ -9,7 +9,7 @@ namespace OnlineShop.Services.Auth
 {
     internal interface IAuth
     {
-        bool LogIn(IUser user);
-        IUser SignUp(IUser user);
+        bool LogIn(User user);
+        User SignUp(User user);
     }
 }
