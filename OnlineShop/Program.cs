@@ -9,13 +9,11 @@ using OnlineShop.Models.Users;
 using OnlineShop.Services.Auth;
 using OnlineShop.Services.Shop;
 using System;
-using System.Collections.Generic;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        List<Book> products = new List<Book>();
         Authorization();
     }
     static void Authorization()
@@ -37,7 +35,7 @@ internal class Program
                     Console.Write("Username = "); user.Username = Console.ReadLine();
                     Console.Write("Password = "); user.Password = Console.ReadLine();
                     auth.SignUp(user);
-                    if(user.Id == -1)
+                    if (user.Id == -1)
                     {
                         Console.WriteLine("You already login");
                     }
@@ -82,8 +80,8 @@ internal class Program
             Console.WriteLine("2.Delete Product");
             Console.WriteLine("3.Set Shipping Type");
             Console.WriteLine("4.Finish program");
-            choice = Console.ReadLine();    
-            switch(choice)
+            choice = Console.ReadLine();
+            switch (choice)
             {
                 case "1":
                     {
@@ -122,7 +120,7 @@ internal class Program
                         Console.WriteLine("2.Ground");
                         Console.WriteLine("3.Sea");
                         string ch = Console.ReadLine();
-                        switch(ch)
+                        switch (ch)
                         {
                             case "1":
                                 {
@@ -147,6 +145,6 @@ internal class Program
                     }
                     break;
             }
-        } while(choice != "4");
+        } while (choice != "4");
     }
 }
