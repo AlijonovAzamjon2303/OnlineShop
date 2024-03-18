@@ -2,6 +2,8 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
+using System;
+
 namespace OnlineShop.Brokers.Loggings
 {
     internal interface ILoggingBroker
