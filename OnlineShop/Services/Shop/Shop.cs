@@ -27,15 +27,19 @@ namespace OnlineShop.Services.Shop
 
         public void DeleteProduct(int productId)
         {
+            IProduct oldProduct = new Book();
             foreach (var product in this.products)
             {
                 if(product.Id ==  productId)
                 {
-                    products.Remove(product);
+                    oldProduct = product;
+                    break;
                 }
             }
-        }
 
+            this.products.Remove(oldProduct);
+        }
+        
         public double GetPrice()
         {
             return this.shipping.GetCost(this);

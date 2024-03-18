@@ -20,6 +20,7 @@ internal class Program
     }
     static void Authorization()
     {
+        Console.Clear();
         LoggingBroker broker = new LoggingBroker();
         Console.WriteLine("1.Sign Up");
         Console.WriteLine("2.Log In");
@@ -29,18 +30,23 @@ internal class Program
         {
             case "1":
                 {
+                    Console.Clear();
                     IAuth auth = new Auth();
                     IUser user = new User();
                     Console.Write("Id = "); user.Id = int.Parse(Console.ReadLine());
                     Console.Write("Username = "); user.Username = Console.ReadLine();
                     Console.Write("Password = "); user.Password = Console.ReadLine();
                     auth.SignUp(user);
-
+                    if(user.Id == -1)
+                    {
+                        Console.WriteLine("You already login");
+                    }
                     Shop();
                 }
                 break;
             case "2":
                 {
+                    Console.Clear();
                     IAuth auth = new Auth();
                     IUser user = new User();
                     Console.Write("Id = "); user.Id = int.Parse(Console.ReadLine());
@@ -59,6 +65,8 @@ internal class Program
                 break;
             case "3":
                 {
+                    Console.Clear();
+                    Console.WriteLine("The Program has been ended");
                     return;
                 }
                 break;
@@ -72,48 +80,69 @@ internal class Program
         {
             Console.WriteLine("1.Add Product");
             Console.WriteLine("2.Delete Product");
-            Console.WriteLine("3.Get Price");
-            Console.WriteLine("4.Show Products");
-            Console.WriteLine("5.Set Shipping Type");
+            Console.WriteLine("3.Set Shipping Type");
             choice = Console.ReadLine();    
             switch(choice)
             {
                 case "1":
                     {
+                        Console.Clear();
                         IProduct product = new Book();
                         Console.Write("Id = "); product.Id = int.Parse(Console.ReadLine());
                         Console.Write("Name = "); product.Name = Console.ReadLine();
                         Console.Write("Price = "); product.Price = double.Parse(Console.ReadLine());
                         Console.Write("Weight = "); product.Weight = double.Parse(Console.ReadLine());
                         shop.AddProduct(product);
+                        Console.WriteLine("---------------------------------------------------------------------------");
+                        shop.ShowProducts();
+                        Console.WriteLine("---------------------------------------------------------------------------");
+                        Console.WriteLine("\nTotal price => " + shop.GetPrice());
                     }
                     break;
                 case "2":
                     {
+                        Console.Clear();
                         int productId;
                         Console.Write("Id = "); productId = int.Parse(Console.ReadLine());
                         shop.DeleteProduct(productId);
+                        Console.WriteLine("---------------------------------------------------------------------------");
+                        shop.ShowProducts();
+                        Console.WriteLine("---------------------------------------------------------------------------");
+                        Console.WriteLine("\nTotal price => " + shop.GetPrice());
                     }
                     break;
                 case "3":
                     {
-                        shop.ShowProducts();
-                        shop.GetPrice();
-                    }
-                    break;
-                case "4":
-                        {
-                        shop.ShowProducts();
-                        }
-                    break;
-                case "5":
-                    {
+                        Console.Clear();
                         Air air = new Air();
                         Ground ground = new Ground();
                         Sea sea = new Sea();
                         Console.WriteLine("1.Air");
                         Console.WriteLine("2.Ground");
                         Console.WriteLine("3.Sea");
+                        string ch = Console.ReadLine();
+                        switch(ch)
+                        {
+                            case "1":
+                                {
+                                    shop.SetShipping(air);
+                                }
+                                break;
+                            case "2":
+                                {
+                                    shop.SetShipping(ground);
+                                }
+                                break;
+                            case "3":
+                                {
+                                    shop.SetShipping(sea);
+                                }
+                                break;
+                        }
+                        Console.WriteLine("---------------------------------------------------------------------------");
+                        shop.ShowProducts();
+                        Console.WriteLine("---------------------------------------------------------------------------");
+                        Console.WriteLine("\nTotal price => " + shop.GetPrice());
                     }
                     break;
             }
