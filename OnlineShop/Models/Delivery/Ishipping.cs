@@ -2,15 +2,15 @@
 // Tarteeb School (c) All rights reserved
 //----------------------------------------
 
+using OnlineShop.Services.Shop;
 using System;
-using OnlineShop.Models.Order;
 
 namespace OnlineShop.Models.Delivery
 {
     internal interface Ishipping
     {
-        public string Name { get; set; }
-        public double GetCost(IOrder order);
-        public DateTime GetDate(IOrder order);
+        string Name { get; set; }
+        double GetCost(IShop shop);
+        DateTime GetDate(IShop shop);
     }
 }

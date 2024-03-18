@@ -3,9 +3,11 @@
 //----------------------------------------
 
 using OnlineShop.Brokers.Loggings;
+using OnlineShop.Models.Delivery;
 using OnlineShop.Models.Products;
 using OnlineShop.Models.Users;
 using OnlineShop.Services.Auth;
+using OnlineShop.Services.Shop;
 using System;
 using System.Collections.Generic;
 
@@ -15,6 +17,9 @@ internal class Program
     {
         List<IProduct> products = new List<IProduct>();
         Authorization();
+        Air air = new Air();
+        Ground ground = new Ground();
+        Sea sea = new Sea();
     }
     static void Authorization()
     {
@@ -64,6 +69,29 @@ internal class Program
     }
     static void Shop()
     {
-        Console.WriteLine("Savdoni boshlashingiz mumkin");
+        IShop shop = new Shop();
+        string choice;
+        do
+        {
+            Console.WriteLine("1.Add Product");
+            Console.WriteLine("2.Delete Product");
+            Console.WriteLine("3.Get Price");
+            Console.WriteLine("4.Show Products");
+            Console.WriteLine("5.Set Shipping Type");
+            choice = Console.ReadLine();    
+            switch(choice)
+            {
+                case "1":
+                    {
+                        IProduct product = new Book();
+                        Console.Write("Id = "); product.Id = int.Parse(Console.ReadLine());
+                        Console.Write("Name = "); product.Name = Console.ReadLine();
+                        Console.Write("Price = "); product.Price = double.Parse(Console.ReadLine());
+                        Console.Write("Weight = "); product.Weight = double.Parse(Console.ReadLine());
+                        shop.AddProduct(product);
+                    }
+                    break;
+            }
+        } while(true);
     }
 }
