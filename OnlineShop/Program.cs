@@ -81,6 +81,7 @@ internal class Program
             Console.WriteLine("1.Add Product");
             Console.WriteLine("2.Delete Product");
             Console.WriteLine("3.Set Shipping Type");
+            Console.WriteLine("4.Finish program");
             choice = Console.ReadLine();    
             switch(choice)
             {
@@ -146,6 +147,6 @@ internal class Program
                     }
                     break;
             }
-        } while(true);
+        } while(choice != "4");
     }
 }
