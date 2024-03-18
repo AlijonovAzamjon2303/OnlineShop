@@ -4,7 +4,7 @@
 
 namespace OnlineShop.Models.Products
 {
-    internal class Book : IProduct
+    internal class Book
     {
         public int Id { get; set; }
         public string Name { get; set ; }

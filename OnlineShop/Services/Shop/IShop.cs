@@ -10,12 +10,12 @@ namespace OnlineShop.Services.Shop
 {
     internal interface IShop
     {
-        IProduct AddProduct(IProduct product);
+        Book AddProduct(Book product);
         void DeleteProduct(int productId);
         double GetPrice();
         void SetShipping(Ishipping shipping);
         string GetShipping();
-        List<IProduct> GetProducts();
+        List<Book> GetProducts();
         void ShowProducts();
     }
 }

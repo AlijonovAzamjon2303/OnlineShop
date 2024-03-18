@@ -11,14 +11,14 @@ namespace OnlineShop.Services.Shop
 {
     internal class Shop : IShop
     {
-        private List<IProduct> products;
+        private List<Book> products;
         private Ishipping shipping;
         public Shop()
         {
-            products = new List<IProduct>();
+            products = new List<Book>();
             shipping = new Ground();
         }
-        public IProduct AddProduct(IProduct product)
+        public Book AddProduct(Book product)
         {
             products.Add(product);
             
@@ -27,7 +27,7 @@ namespace OnlineShop.Services.Shop
 
         public void DeleteProduct(int productId)
         {
-            IProduct oldProduct = new Book();
+            Book oldProduct = new Book();
             foreach (var product in this.products)
             {
                 if(product.Id ==  productId)
@@ -63,7 +63,7 @@ namespace OnlineShop.Services.Shop
             }
         }
 
-        public List<IProduct> GetProducts()
+        public List<Book> GetProducts()
         {
             return this.products;
         }

@@ -15,7 +15,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        List<IProduct> products = new List<IProduct>();
+        List<Book> products = new List<Book>();
         Authorization();
     }
     static void Authorization()
@@ -88,7 +88,7 @@ internal class Program
                 case "1":
                     {
                         Console.Clear();
-                        IProduct product = new Book();
+                        Book product = new Book();
                         Console.Write("Id = "); product.Id = int.Parse(Console.ReadLine());
                         Console.Write("Name = "); product.Name = Console.ReadLine();
                         Console.Write("Price = "); product.Price = double.Parse(Console.ReadLine());
