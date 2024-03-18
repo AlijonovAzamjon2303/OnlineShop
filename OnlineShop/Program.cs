@@ -17,9 +17,6 @@ internal class Program
     {
         List<IProduct> products = new List<IProduct>();
         Authorization();
-        Air air = new Air();
-        Ground ground = new Ground();
-        Sea sea = new Sea();
     }
     static void Authorization()
     {
@@ -89,6 +86,34 @@ internal class Program
                         Console.Write("Price = "); product.Price = double.Parse(Console.ReadLine());
                         Console.Write("Weight = "); product.Weight = double.Parse(Console.ReadLine());
                         shop.AddProduct(product);
+                    }
+                    break;
+                case "2":
+                    {
+                        int productId;
+                        Console.Write("Id = "); productId = int.Parse(Console.ReadLine());
+                        shop.DeleteProduct(productId);
+                    }
+                    break;
+                case "3":
+                    {
+                        shop.ShowProducts();
+                        shop.GetPrice();
+                    }
+                    break;
+                case "4":
+                        {
+                        shop.ShowProducts();
+                        }
+                    break;
+                case "5":
+                    {
+                        Air air = new Air();
+                        Ground ground = new Ground();
+                        Sea sea = new Sea();
+                        Console.WriteLine("1.Air");
+                        Console.WriteLine("2.Ground");
+                        Console.WriteLine("3.Sea");
                     }
                     break;
             }

@@ -16,6 +16,7 @@ namespace OnlineShop.Services.Shop
         public Shop()
         {
             products = new List<IProduct>();
+            shipping = new Ground();
         }
         public IProduct AddProduct(IProduct product)
         {
@@ -26,7 +27,7 @@ namespace OnlineShop.Services.Shop
 
         public void DeleteProduct(int productId)
         {
-            foreach (var product in products)
+            foreach (var product in this.products)
             {
                 if(product.Id ==  productId)
                 {
@@ -37,12 +38,6 @@ namespace OnlineShop.Services.Shop
 
         public double GetPrice()
         {
-            double price = 0;
-            foreach (var product in products)
-            {
-                price += product.Price * product.Weight;
-            }
-
             return this.shipping.GetCost(this);
         }
 
@@ -62,6 +57,11 @@ namespace OnlineShop.Services.Shop
             {
                 Console.WriteLine($"{product.Id}| {product.Name}| {product.Price} * {product.Weight} = {product.Weight * product.Price}");
             }
+        }
+
+        public List<IProduct> GetProducts()
+        {
+            return this.products;
         }
     }
 }

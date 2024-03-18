@@ -9,7 +9,7 @@ namespace OnlineShop.Models.Delivery
 {
     internal interface Ishipping
     {
-        string Name { get; set; }
+        string Name { get; }
         double GetCost(IShop shop);
         DateTime GetDate(IShop shop);
     }
