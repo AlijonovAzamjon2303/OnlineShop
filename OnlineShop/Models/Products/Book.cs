@@ -6,8 +6,9 @@ namespace OnlineShop.Models.Products
 {
     internal class Book : IProduct
     {
-        public int Id { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public double Price { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public double Weight { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public int Id { get; set; }
+        public string Name { get; set ; }
+        public double Price { get; set; }
+        public double Weight { get; set; }
     }
 }
