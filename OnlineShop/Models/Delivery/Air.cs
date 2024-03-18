@@ -4,39 +4,32 @@
 
 using OnlineShop.Models.Products;
 using OnlineShop.Services.Shop;
+using System;
+using System.Collections.Generic;
 
 namespace OnlineShop.Models.Delivery
 {
-    internal class Air : IShop
+    internal class Air : Ishipping
     {
-        public IProduct AddProduct(IProduct product)
+        public string Name { get; }
+        public Air()
         {
-            throw new System.NotImplementedException();
+            this.Name = "Air";
+        }
+        public double GetCost(IShop shop)
+        {
+            double price = 0;
+            foreach (var product in shop.GetProducts())
+            {
+                price += product.Price * product.Weight;
+            }
+
+            return price * 1.3;
         }
 
-        public void DeleteProduct(int productId)
+        public DateTime GetDate(IShop shop)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public double GetPrice()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public string GetShipping()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void SetShipping(Ishipping shipping)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void ShowProducts()
-        {
-            throw new System.NotImplementedException();
+            return DateTime.Now.AddDays(7);
         }
     }
 }

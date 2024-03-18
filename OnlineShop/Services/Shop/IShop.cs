@@ -15,6 +15,7 @@ namespace OnlineShop.Services.Shop
         double GetPrice();
         void SetShipping(Ishipping shipping);
         string GetShipping();
+        List<IProduct> GetProducts();
         void ShowProducts();
     }
 }
