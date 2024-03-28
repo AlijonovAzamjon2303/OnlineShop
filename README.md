@@ -1,4 +1,5 @@
 # OnlineShop
+## Single Responsibility & Open/Closed Principles
 ## Map
 ![image](https://github.com/AlijonovAzamjon2303/OnlineShop/assets/112892881/ca7901af-44fd-4074-a020-600924d51f26)
 ## Loggings
@@ -17,3 +18,6 @@
 ![image](https://github.com/AlijonovAzamjon2303/OnlineShop/assets/112892881/afaab298-cf51-4d42-8d7e-aecfce91f012)
 ## Demo
 ![demoOnlineShop](https://github.com/AlijonovAzamjon2303/OnlineShop/assets/112892881/03c41473-c851-421e-b0f4-cecebc491d03)
+## Xulosa
+Shipping typeni interface'lar bilan implementatsiya qilganimiz bois, biz yangi shipping type qo'shmoqchi bo'lsak
+shunchaki IShipping'ni impelementatsiya qilsak kifoya qiladi. Avval yozgan kodimizni esa o'zgartishga hojat yo'q.
